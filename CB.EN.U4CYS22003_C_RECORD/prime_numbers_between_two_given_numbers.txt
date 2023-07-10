@@ -1,0 +1,22 @@
+#include<stdio.h>
+int isPrime(int n){
+	int number=0;
+	for(int j=2;j<n;j++){
+		if(n%j==0){number++;}
+	}
+	if(number!=0){return 0;}//not prime
+	else{return 1;}//prime
+}
+
+int generatePrimes(int start, int end){
+	for(int j=start;j<end+1;j++){
+		if(isPrime(j)==1){printf("%d ",j);}
+	}
+}
+
+void main(){
+	int start,end;
+	scanf("%d%d",&start,&end);
+	printf("Prime numbers between %d and %d are: ",start,end);
+	generatePrimes(start,end);
+}
